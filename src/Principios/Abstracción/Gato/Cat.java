@@ -1,4 +1,4 @@
-package Abstracción.Gato;
+package Principios.Abstracción.Gato;
 
 public class Cat {
     private String name;

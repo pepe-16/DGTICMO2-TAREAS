@@ -1,4 +1,4 @@
-package Abstracción.Gato;
+package Principios.Abstracción.Gato;
 import java.util.Date;
 
 public class Sausage implements Food{

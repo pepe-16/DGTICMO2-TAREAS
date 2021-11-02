@@ -1,4 +1,4 @@
-package interfaceSegregation;
+package PrincipiosSOLID.interfaceSegregation;
 
 import java.util.ArrayList;
 

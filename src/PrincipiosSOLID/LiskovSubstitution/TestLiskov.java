@@ -1,4 +1,4 @@
-package liskov;
+package PrincipiosSOLID.LiskovSubstitution;
 
 /*
 El tipo de cada parámetro en el método de la subclase debe ser igual o más abstracto que en la superclase

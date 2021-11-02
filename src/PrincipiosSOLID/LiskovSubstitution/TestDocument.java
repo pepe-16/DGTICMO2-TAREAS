@@ -1,4 +1,4 @@
-package liskov;
+package PrincipiosSOLID.LiskovSubstitution;
 
 public class TestDocument
 {

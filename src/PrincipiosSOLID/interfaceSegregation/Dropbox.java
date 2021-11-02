@@ -1,4 +1,4 @@
-package interfaceSegregation;
+package PrincipiosSOLID.interfaceSegregation;
 
 public class Dropbox implements InterfaceDrop
 {

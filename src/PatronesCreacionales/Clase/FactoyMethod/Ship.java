@@ -1,4 +1,4 @@
-package logistic;
+package PatronesCreacionales.Clase.FactoyMethod;
 
 public class Ship implements Transport{
 	

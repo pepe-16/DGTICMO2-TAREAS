@@ -1,4 +1,4 @@
-package logistic;
+package PatronesCreacionales.Clase.FactoyMethod;
 
 public class Truck implements Transport{
 	public void deliver() {

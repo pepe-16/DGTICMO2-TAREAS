@@ -1,4 +1,4 @@
-package proyecto;
+package Proyecto.Modulo1;
 class MongoDBConnection {
 	
 	private String database;

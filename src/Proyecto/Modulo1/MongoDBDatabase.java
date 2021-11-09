@@ -1,4 +1,4 @@
-package proyecto;
+package Proyecto.Modulo1;
 public class MongoDBDatabase {
 	MongoDBConnection connection;
 

@@ -1,4 +1,4 @@
-package proyecto;
+package Proyecto.Modulo1;
 import java.util.Date;
 public class Protocolizaciones {
 

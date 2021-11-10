@@ -15,9 +15,25 @@ public class Usuario extends CreateInstrumentosNotariales implements Registro {
     private String contraseña = "sk_16@16#";
     private String username = "Usuario";
 
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     @Override
-    public boolean login(String contraseña) {
-        if (this.isSessionactivo() == false && this.contraseña == contraseña) {
+    public boolean login(String contraseña, String username) {
+        if (this.isSessionactivo() == false && this.contraseña == contraseña && this.username == username) {
             System.out.println("Usuario activo.....");
             this.setSessionactivo(true);
         }else{

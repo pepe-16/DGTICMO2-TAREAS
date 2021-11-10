@@ -5,6 +5,7 @@
  */
 package Proyecto.Modulo2;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -21,34 +22,67 @@ public class Aplicacion {
         }
         return admininstance;
     }
-    
+
     public static void main(String[] args) throws Exception {
+        Scanner sn = new Scanner(System.in);
+        boolean salir = false;
+        int opcion; //Guardaremos la opcion del usuario
 
-        
-        getInstanceAdmin().login("DerlAdmin123");
-        
-        getInstanceAdmin().logout();
-        
-        
-        Usuario us = new Usuario();
-        us.newIntrumentoNotarial("Protocolizacion");
-        System.out.println(us.instrumento.toString());
-        us.instrumento.borrarRegistro();
-        us.instrumento.buscarRegistro();
-        us.instrumento.capturaRegistro();
+        String contraseña;
+        String loginnom;
 
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.print("Identificando entorno de ejecucion(browser/windows): ");
-//        String operatingEnvironment = scanner.next();
-//
-//        Application application = new Application();
-//
-//        try
-//        {
-//            application.main(operatingEnvironment);
-//        }
-//        catch (Exception exception) {
-//            System.out.println(exception.getMessage());
-//        }
+        String nomuser;
+        String conuser;
+        String instru;
+
+        do {
+            System.out.println("1. Iniciar cesion como administrador y crear un usuario...");
+            System.out.println("2. Registrar algun instruemnto notarial");
+            System.out.println("3. Salir");
+            try {
+                System.out.println("Escribe una de las opciones: ");
+                opcion = sn.nextInt();
+                sn.nextLine();
+                switch (opcion) {
+                    case 1:
+
+                        System.out.println("Ingrese el nombre del admin: ");
+                        loginnom = sn.nextLine();
+                        System.out.println("Ingrese la contrase del admin: ");
+                        contraseña = sn.nextLine();
+
+                        getInstanceAdmin().login(contraseña, loginnom);
+
+                        System.out.println("Ingrese el nombre del usuario: ");
+                        nomuser = sn.nextLine();
+                        System.out.println("Ingrese la contrasena del usuario: ");
+                        conuser = sn.nextLine();
+
+                        getInstanceAdmin().generateUser( conuser, nomuser);
+
+                        break;
+                    case 2:
+
+                        Usuario us = new Usuario();
+       
+                        System.out.println("Ingrese el tipo de instrumento notarial que deseas crear...");
+                        instru = sn.nextLine();
+                        us.newIntrumentoNotarial(instru);
+                        System.out.println(us.instrumento.toString());
+                        us.instrumento.borrarRegistro();
+                        us.instrumento.buscarRegistro();
+                        us.instrumento.capturaRegistro();
+                        break;
+                    case 3:
+                        salir = true;
+                        break;
+                    default:
+                        System.out.println("Solo números entre 1 y 3");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Debes insertar un número");
+                sn.next();
+            }
+        } while (!salir);
     }
 }

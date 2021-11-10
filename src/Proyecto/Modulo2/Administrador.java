@@ -9,20 +9,32 @@ package Proyecto.Modulo2;
  *
  * @author Pepe
  */
-public class Administrador implements Registro{
+public class Administrador implements Registro {
+
     private boolean sessionactivo;
     private String contraseña = "DerlAdmin123";
     private String username = "Admin";
+
+    public Usuario generateUser(String contraseña, String username) {
+
+        Usuario userinstance = new Usuario();
+        userinstance.setContraseña(contraseña);
+        userinstance.setUsername(username);
+        System.out.println("Se creo un usuario...");
+        return userinstance;
+    }
+
     @Override
-        public boolean login(String contraseña) {
-        if (this.isSessionactivo() == false && this.contraseña == contraseña) {
+    public boolean login(String contraseña, String username) {
+        if (this.isSessionactivo() == false && this.contraseña == contraseña && this.username == username) {
             this.setSessionactivo(true);
             System.out.println("Administrador activo.....");
-        }else{
+        } else {
             System.out.println("Contraseña erronea..");
         }
         return this.isSessionactivo();
     }
+
     @Override
     public boolean logout() {
         if (this.isSessionactivo() == true) {
@@ -31,6 +43,7 @@ public class Administrador implements Registro{
         }
         return this.isSessionactivo();
     }
+
     public boolean isSessionactivo() {
         return sessionactivo;
     }

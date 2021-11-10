@@ -1,7 +1,5 @@
 package Proyecto.Modulo2;
 
-import Principios.Solid.Clase.DependencyInversion.*;
-
 public interface Database
 {
     void connect(String database);
@@ -9,4 +7,5 @@ public interface Database
     void update(Entity entity);
     void delete(Entity entity);
     void disconnect();
+    void search(Entity entity);
 }

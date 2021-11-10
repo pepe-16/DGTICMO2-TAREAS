@@ -1,7 +1,5 @@
 package Proyecto.Modulo2;
 
-import Principios.Solid.Clase.DependencyInversion.*;
-
 public class MySQLDatabase implements Database
 {
     MySQLConnection connection;
@@ -20,6 +18,11 @@ public class MySQLDatabase implements Database
 
     public void delete(Entity entity){
         System.out.println("Deleting " + entity + " in MySQL using " + connection.getDatabase());
+    }
+    
+    @Override
+    public void search(Entity entity){
+        System.out.println("Search " + entity + " in MySQL using " + connection.getDatabase());
     }
 
     public void disconnect() {

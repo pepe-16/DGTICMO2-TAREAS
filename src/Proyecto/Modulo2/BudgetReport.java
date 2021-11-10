@@ -1,7 +1,5 @@
 package Proyecto.Modulo2;
 
-import Principios.Solid.Clase.DependencyInversion.*;
-
 public class BudgetReport implements Entity
 {
     private Database database;
@@ -15,5 +13,14 @@ public class BudgetReport implements Entity
 
     public void save() {
         database.insert(this);
+    }
+    public void drop(){
+        database.delete(this);
+    }
+    public void update(){
+        database.update(this);
+    }
+    public void search(){
+        database.search(this);
     }
 }

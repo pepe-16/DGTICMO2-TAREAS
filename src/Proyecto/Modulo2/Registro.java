@@ -11,6 +11,6 @@ package Proyecto.Modulo2;
  */
 public interface Registro {
     
-    boolean login();
+    boolean login(String contraseña);
     boolean logout();
 }

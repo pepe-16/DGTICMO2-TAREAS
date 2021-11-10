@@ -10,13 +10,16 @@ package Proyecto.Modulo2;
  * @author Pepe
  */
 public class Administrador implements Registro{
-    private Usuario usuariorefistro;
     private boolean sessionactivo;
-
+    private String contraseña = "DerlAdmin123";
+    private String username = "Admin";
     @Override
-    public boolean login() {
-        if (this.isSessionactivo() == false) {
+        public boolean login(String contraseña) {
+        if (this.isSessionactivo() == false && this.contraseña == contraseña) {
             this.setSessionactivo(true);
+            System.out.println("Administrador activo.....");
+        }else{
+            System.out.println("Contraseña erronea..");
         }
         return this.isSessionactivo();
     }
@@ -24,10 +27,10 @@ public class Administrador implements Registro{
     public boolean logout() {
         if (this.isSessionactivo() == true) {
             this.setSessionactivo(false);
+            System.out.println("Administrador inactivo.....");
         }
         return this.isSessionactivo();
     }
-    public 
     public boolean isSessionactivo() {
         return sessionactivo;
     }
@@ -35,6 +38,4 @@ public class Administrador implements Registro{
     public void setSessionactivo(boolean sessionactivo) {
         this.sessionactivo = sessionactivo;
     }
-    
-    
 }

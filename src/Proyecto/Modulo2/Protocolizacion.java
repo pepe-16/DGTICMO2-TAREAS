@@ -1,6 +1,5 @@
 package Proyecto.Modulo2;
 
-import Proyecto.Modulo1.*;
 import java.util.Date;
 
 public class Protocolizacion extends BudgetReport implements InstrumentosNotariales {
@@ -158,7 +157,7 @@ public class Protocolizacion extends BudgetReport implements InstrumentosNotaria
                 valorRetorno = false;
             } else {
                 //Ya se pueden comparar atributo por atributo 
-                Protocolizaciones nuevaProtocolizaciones = (Protocolizaciones) otro; //Instancia una casa
+                Protocolizacion nuevaProtocolizaciones = (Protocolizacion) otro; //Instancia una casa
                 if (this.getId_proto() == nuevaProtocolizaciones.getId_proto()) {
                     valorRetorno = true;
                 } else {

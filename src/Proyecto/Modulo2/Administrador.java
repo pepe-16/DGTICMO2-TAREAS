@@ -12,21 +12,21 @@ package Proyecto.Modulo2;
 public class Administrador implements Registro {
 
     private boolean sessionactivo;
-    private String contraseña = "DerlAdmin123";
+    private String contrasena = "DerlAdmin123";
     private String username = "Admin";
 
-    public Usuario generateUser(String contraseña, String username) {
+    public Usuario generateUser(String contrasena, String username) {
 
         Usuario userinstance = new Usuario();
-        userinstance.setContraseña(contraseña);
+        userinstance.setContrasena(contrasena);
         userinstance.setUsername(username);
         System.out.println("Se creo un usuario...");
         return userinstance;
     }
 
     @Override
-    public boolean login(String contraseña, String username) {
-        if (this.isSessionactivo() == false && this.contraseña == contraseña && this.username == username) {
+    public boolean login(String contrasena, String username) {
+        if (this.isSessionactivo() == false && this.contrasena == contrasena && this.username == username) {
             this.setSessionactivo(true);
             System.out.println("Administrador activo.....");
         } else {

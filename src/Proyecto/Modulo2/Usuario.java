@@ -12,15 +12,15 @@ package Proyecto.Modulo2;
 public class Usuario extends CreateInstrumentosNotariales implements Registro {
 
     private boolean sessionactivo = false;
-    private String contraseña = "sk_16@16#";
+    private String contrasena = "sk_16@16#";
     private String username = "Usuario";
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public String getUsername() {
@@ -32,8 +32,8 @@ public class Usuario extends CreateInstrumentosNotariales implements Registro {
     }
 
     @Override
-    public boolean login(String contraseña, String username) {
-        if (this.isSessionactivo() == false && this.contraseña == contraseña && this.username == username) {
+    public boolean login(String contrasena, String username) {
+        if (this.isSessionactivo() == false && this.contrasena == contrasena && this.username == username) {
             System.out.println("Usuario activo.....");
             this.setSessionactivo(true);
         }else{

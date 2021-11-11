@@ -28,7 +28,7 @@ public class Aplicacion {
         boolean salir = false;
         int opcion; //Guardaremos la opcion del usuario
 
-        String contraseña;
+        String contrasena;
         String loginnom;
 
         String nomuser;
@@ -49,9 +49,9 @@ public class Aplicacion {
                         System.out.println("Ingrese el nombre del admin: ");
                         loginnom = sn.nextLine();
                         System.out.println("Ingrese la contrase del admin: ");
-                        contraseña = sn.nextLine();
+                        contrasena = sn.nextLine();
 
-                        getInstanceAdmin().login(contraseña, loginnom);
+                        getInstanceAdmin().login(contrasena, loginnom);
 
                         System.out.println("Ingrese el nombre del usuario: ");
                         nomuser = sn.nextLine();
